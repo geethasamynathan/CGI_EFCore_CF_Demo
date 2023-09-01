@@ -9,5 +9,6 @@ namespace EF_CodeFirst_Demo.Models
         {
         }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }

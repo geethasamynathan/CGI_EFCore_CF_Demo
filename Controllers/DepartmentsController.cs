@@ -42,7 +42,15 @@ namespace EF_CodeFirst_Demo.Controllers
         [HttpPut]
         public ActionResult<Department> Update(int id,Department department)
         {
-            return Ok(_repo.UpdateDepartment(department));
+            Department dept = _repo.UpdateDepartment(department);
+            if (dept == null)
+            {
+                return Ok("No Data available ");
+            }
+            else
+            {
+                return Ok(dept);
+            }
         }
 
         [HttpDelete]

@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<DepartmentDbContext>(opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("myconnection")));
 builder.Services.AddScoped<IDepartmentRepo, DepartmentRepository>();
+builder.Services.AddScoped<IEmployeeRepo,EmployeeRepo>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
